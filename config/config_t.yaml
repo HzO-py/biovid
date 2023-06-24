@@ -1,0 +1,47 @@
+DATA_ROOT: /hdd/lzq/PartA/biosignals_raw
+MODEL_ROOT: /hdd/sda/lzq/MIntPAIN/model
+LOGS_ROOT: /hdd/sda/lzq/MIntPAIN/model/logs
+CLUSTER_ROOT: /hdd/sda/lzq/MIntPAIN/model/cluster
+
+MODEL_NAME: experts_t_epoch10
+MODEL_NAME2: voice_v100.t7
+
+CHECKPOINT_NAME: t_time_epoch10.t7
+CHECKPOINT_NAME2: experts_zd_voice_3f_0G.t7
+CHECKPOINT_NAME3: experts_zd_bio_3f_0G.t7
+CHECKPOINT_NAME4: experts_zd_bio_3f_0G.t7
+
+GPUID: "7"
+SEED: 85
+
+EPOCH: 100
+SUB_EPOCH: 10
+BATCH_SIZE: 64
+TCN_BATCH_SIZE: 1
+
+MODAL: T
+
+VGG_OR_RESNET: 1
+EXTRACT_NUM: 512
+HIDDEN_NUM: 64
+CLASS_NUM: 9
+
+TCN_OR_LSTM: 0
+TCN_NUM: 3
+TCN_HIDDEN_NUM: [128,128,64,32]
+
+AU_INPUT_SIZE: [15,15]
+AU_HIDDEN_SIZE: 32
+AU_OUTPUT_SIZE: 32
+PIC_SIZE: 224
+
+TRAIN_RIO: 0.8
+DATA_PATHS: /hdd/sda/lzq/MIntPAIN/dataset/label.csv
+IS_POINT: True
+
+LR: 0.001
+WEIGHT_DELAY: 0.0001
+
+SAMPLE_THRESHOLD: 16
+SCORE_THRESHOLD: 0.2
+CLUSTER_NUM: 3

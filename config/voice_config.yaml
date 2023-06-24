@@ -1,0 +1,30 @@
+DATA_ROOT: '/hdd/lzq/PartA/biosignals_raw'
+MODEL_ROOT: '/hdd/sdd/lzq/DLMM_new/model'
+LOGS_ROOT: '/hdd/sdd/lzq/DLMM_new/model/logs'
+MODEL_NAME: 'voice_tcn_frozen.t7'
+GPUID: "2"
+
+EPOCH: 50
+BATCH_SIZE: 64
+
+EXTRACT_NUM: 2048
+HIDDEN_NUM: 64
+CLASS_NUM: 2
+TCN_NUM: 32
+TCN_HIDDEN_NUM: [32,16,16,1]
+
+TRAIN_RIO: 0.9
+DATA_PATHS: [
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.1.29/pain2/voice","/hdd/sdd/lzq/DLMM_new/dataset/2022.1.29/pain2/label.csv",1],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain1/voice","/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain1/label.csv",1],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain2/voice","/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain2/label.csv",1],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain3/voice","/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain3/label.csv",1],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain4/voice","/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain4/label.csv",2],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/pain3/voice","/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/label.csv",2],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/pain4/voice","/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/label.csv",2],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/pain5/voice","/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/label.csv",2]
+  ]
+IS_POINT: True
+
+LR: 0.0001
+WEIGHT_DELAY: 0.00001

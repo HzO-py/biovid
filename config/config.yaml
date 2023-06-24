@@ -1,0 +1,49 @@
+DATA_ROOT: /hdd/lzq/PartA/biosignals_raw
+MODEL_ROOT: /hdd/sda/lzq/biovid/model
+LOGS_ROOT: /hdd/sda/lzq/biovid/model/logs
+CLUSTER_ROOT: /hdd/sda/lzq/biovid/model/cluster
+
+MODEL_NAME: bio_time_0vs4_gen_
+MODEL_NAME2: face_bio_0vs4_gen_
+
+CHECKPOINT_NAME: face_time_0vs4_gen_
+CHECKPOINT_NAME2: bio_time_0vs4_gen_
+CHECKPOINT_NAME3: experts_zd_bio_3f_0G.t7
+CHECKPOINT_NAME4: experts_zd_bio_3f_0G.t7
+
+GPUID: "6"
+SEED: 85
+
+EPOCH: 1
+SUB_EPOCH: 10
+BATCH_SIZE: 256
+TCN_BATCH_SIZE: 1
+CLUSTER_EPOCH_SIZE_1: 5
+CLUSTER_EPOCH_SIZE_2: 5
+
+MODAL: bio
+
+VGG_OR_RESNET: 1
+EXTRACT_NUM: 1
+HIDDEN_NUM: 8
+CLASS_NUM: 2
+
+TCN_OR_LSTM: 0
+TCN_NUM: 3
+TCN_HIDDEN_NUM: [128,128,64,32]
+
+AU_INPUT_SIZE: [15,15]
+AU_HIDDEN_SIZE: 32
+AU_OUTPUT_SIZE: 32
+PIC_SIZE: 224
+
+TRAIN_RIO: 0.9
+DATA_PATHS: /hdd/sda/lzq/biovid/dataset/label.csv
+IS_POINT: True
+
+LR: 0.0001
+WEIGHT_DELAY: 0.0001
+
+SAMPLE_THRESHOLD: 16
+SCORE_THRESHOLD: 0.2
+CLUSTER_NUM: 2

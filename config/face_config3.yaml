@@ -1,0 +1,40 @@
+DATA_ROOT: '/hdd/lzq/PartA/biosignals_raw'
+MODEL_ROOT: '/hdd/sdd/lzq/DLMM_new/model'
+LOGS_ROOT: '/hdd/sdd/lzq/DLMM_new/model/logs'
+MODEL_NAME: 'v4_fv_res_tcn.t7'
+GPUID: "2"
+
+EPOCH: 50
+BATCH_SIZE: 512
+TCN_BATCH_SIZE: 64
+
+FACE_OR_VOICE: 0 
+
+VGG_OR_RESNET: 1
+EXTRACT_NUM: 512
+HIDDEN_NUM: 64
+CLASS_NUM: 2
+
+TCN_OR_LSTM: 0
+TCN_NUM: 32
+TCN_HIDDEN_NUM: [32,16,16,1]
+
+TRAIN_RIO: 0.9
+DATA_PATHS: [
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.1.29/pain2","/hdd/sdd/lzq/DLMM_new/dataset/2022.1.29/pain2/label.csv",1],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain1","/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain1/label.csv",1],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain2","/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain2/label.csv",1],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain3","/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain3/label.csv",1],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain4","/hdd/sdd/lzq/DLMM_new/dataset/2022.2.25/pain4/label.csv",2],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/pain3","/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/label.csv",2],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/pain4","/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/label.csv",2],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/pain5","/hdd/sdd/lzq/DLMM_new/dataset/2022.3.5/label.csv",2],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.3.23/pain1","/hdd/sdd/lzq/DLMM_new/dataset/2022.3.23/label.csv",2],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.3.23/pain2","/hdd/sdd/lzq/DLMM_new/dataset/2022.3.23/label.csv",2],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.3.23/pain3","/hdd/sdd/lzq/DLMM_new/dataset/2022.3.23/label.csv",2],
+  ["/hdd/sdd/lzq/DLMM_new/dataset/2022.3.23/pain4","/hdd/sdd/lzq/DLMM_new/dataset/2022.3.23/label.csv",2]
+  ]
+IS_POINT: True
+
+LR: 0.0001
+WEIGHT_DELAY: 0.00001
